@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My First Website</title>
+    <title>My Styled Website</title>
+    
+    <style>
+        /* This is the CSS section! */
+
+        body {
+            background-color: #f0f4f8; /* A light blue-grey background */
+            color: #333333;           /* Dark grey text (easier on eyes than pure black) */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, modern font */
+            line-height: 1.6;          /* Adds space between lines of text */
+            margin: 0;                 /* Removes default browser gaps */
+            padding: 0;
+            display: flex;
+            justify-content: center;   /* Centers the content horizontally */
+            align-items: center;       /* Centers the content vertically */
+            min-height: 100vh;         /* Makes the body take up the full screen height */
+        }
+
+        .container {
+            background-color: white;   /* White box for our content */
+            padding: 40px;             /* Space inside the box */
+            border-radius: 15px;      /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* A soft shadow for depth */
+            max-width: 500px;          /* Prevents the box from getting too wide */
+            text-align: center;        /* Centers the text inside the box */
+        }
+
+        h1 {
+            color: #2d5a27;           /* A nice forest green for the heading */
+            margin-bottom: 10px;      /* Space below the heading */
+        }
+
+        p {
+            font-size: 18px;          /* Makes the paragraph text a bit larger */
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>I built this website using GitHub Pages.</p>
+
+    <div class="container">
+        <h1>Hello, World!</h1>
+        <p>I’m learning how to style my website using CSS. It's starting to look pretty good!</p>
+    </div>
+
 </body>
 </html>
