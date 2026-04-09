@@ -1,40 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Styled Website</title>
+    <meta charset="UTF-8">
+    <title>My Professional Styled Website</title>
     
     <style>
-        /* This is the CSS section! */
-
         body {
-            background-color: #f0f4f8; /* A light blue-grey background */
-            color: #333333;           /* Dark grey text (easier on eyes than pure black) */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, modern font */
-            line-height: 1.6;          /* Adds space between lines of text */
-            margin: 0;                 /* Removes default browser gaps */
-            padding: 0;
+            background-color: #f0f4f8; 
+            color: #333333;           
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6;          
+            margin: 0;                 
             display: flex;
-            justify-content: center;   /* Centers the content horizontally */
-            align-items: center;       /* Centers the content vertically */
-            min-height: 100vh;         /* Makes the body take up the full screen height */
+            justify-content: center;   
+            align-items: center;       
+            min-height: 100vh;         
+            padding: 20px; /* Added padding for mobile phone screens */
         }
 
         .container {
-            background-color: white;   /* White box for our content */
-            padding: 40px;             /* Space inside the box */
-            border-radius: 15px;      /* Rounded corners */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* A soft shadow for depth */
-            max-width: 500px;          /* Prevents the box from getting too wide */
-            text-align: center;        /* Centers the text inside the box */
+            background-color: white;   
+            padding: 40px;             
+            border-radius: 20px; /* Slightly rounder for a friendlier look */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Softer, more modern shadow */
+            max-width: 500px;          
+            text-align: center;        
         }
 
         h1 {
-            color: #2d5a27;           /* A nice forest green for the heading */
-            margin-bottom: 10px;      /* Space below the heading */
+            color: #2d5a27;           
+            margin-bottom: 15px;      
         }
 
-        p {
-            font-size: 18px;          /* Makes the paragraph text a bit larger */
+        /* I moved your image styling here! */
+        .profile-pic {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 12px;
+            margin: 25px 0;
+            display: inline-block;
+        }
+
+        /* Styling the Link */
+        a {
+            color: #2d5a27; /* Matches your heading */
+            text-decoration: none; /* Removes the underline */
+            font-weight: bold;
+            transition: 0.3s; /* Makes the color change smooth */
+        }
+
+        a:hover {
+            color: #4a8c41; /* Lightens the green when you hover over it */
+            text-decoration: underline; /* Underline only appears when hovering */
         }
     </style>
 </head>
@@ -42,13 +60,15 @@
 
     <div class="container">
         <h1>Hello, World!</h1>
+        
         <p>I’m learning how to style my website using CSS. It's starting to look pretty good!</p>
-        <img src="my-image.jpg" alt="A beautiful landscape photo" style="width: 100%; max-width: 500px; height: auto; border-radius: 10px; display: block; margin: 20px auto;">
-   <p>Check out my favorite website: 
-   <a href="https://www.google.com" target="_blank">Click here to visit!</a>
-</p>
+        
+        <img src="my-image.jpg" alt="A beautiful landscape photo" class="profile-pic">
+
+        <p>Check out my favorite website: <br>
+            <a href="https://www.google.com" target="_blank">Click here to visit!</a>
+        </p>
     </div>
-    
 
 </body>
 </html>
