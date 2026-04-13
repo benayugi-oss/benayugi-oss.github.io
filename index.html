@@ -92,3 +92,68 @@
             border-color: #ffffff;
             box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
         }
+
+        /* --- GLOWING LINKS --- */
+        a {
+            color: #00d2ff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #00d2ff;
+        }
+
+        ol {
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 20px;
+            list-style-position: outside;
+        }
+
+        li {
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Hello, World!</h1>
+        
+        <p>I’m learning how to style my website using CSS. It's starting to look pretty good!</p>
+        
+        <img src="https://images.unsplash.com/photo-1621259182978-f09e5e2ca090?q=80&w=1000&auto=format&fit=crop" 
+             alt="Classic PlayStation 3 Console" 
+             class="profile-pic">
+
+        <p>Check out my favorite website: <br> 
+            <a href="https://store.playstation.com/" target="_blank">Access PlayStation Store</a>
+        </p>
+    
+        <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+        <h2>My Top 3 Videogames of All Time</h2>
+        <p>One of my favorite hobbies since I was a kid was playing videogames. The best games I ever played were:</p>     
+        
+        <ol>
+            <li>Uncharted <img src="Uncharted.png" alt="Uncharted" class="game-image"></li>
+            <li>Call of Duty <img src="COD.png" alt="Call of Duty" class="game-image"></li>
+            <li>GTA <img src="GTA.jpeg" alt="GTA" class="game-image"></li>
+        </ol>
+
+        <p>Thank you for reading about me! More information about the games will be below!</p>        
+        
+        <ol> 
+            <li><a href="https://www.playstation.com/en-us/uncharted/" target="_blank">Immerse yourself in the life of Nathan Drake</a></li>
+            <li><a href="https://www.playstation.com/en-us/games/call-of-duty-modern-warfare-iii/" target="_blank">This is your Call to Duty</a></li>
+            <li><a href="https://www.rockstargames.com/gta-v" target="_blank">Cause chaos and take over Los Santos</a></li>
+        </ol>     
+    </div>
+
+</body>
+</html>
