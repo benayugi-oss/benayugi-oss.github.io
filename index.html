@@ -5,7 +5,7 @@
     <title>My Professional Styled Website</title>
     
     <style> 
-        /* General Page Layout */
+        /* --- THE FIX IS HERE --- */
         body {
             background-color: #f0f4f8; 
             color: #333333;           
@@ -14,48 +14,45 @@
             margin: 0;                 
             display: flex;
             justify-content: center;   
-            align-items: center;       
+            /* Changed from 'center' to 'flex-start' so it doesn't cut off the bottom */
+            align-items: flex-start;       
             min-height: 100vh;         
-            padding: 20px; 
+            /* Added more padding to the top and bottom (40px) */
+            padding: 40px 20px; 
+            box-sizing: border-box;
         }
 
-        /* The main white box container */
         .container {
             background-color: white;   
             padding: 40px;             
             border-radius: 20px; 
             box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
-            max-width: 500px;          
+            max-width: 500px;
+            width: 100%; /* Ensures it looks good on mobile */
             text-align: center;        
         }
 
-        h1 {
+        h1, h2 {
             color: #2d5a27;           
-            margin-bottom: 15px;      
         }
 
-        h2 {
-            color: #2d5a27;
-            margin-top: 30px;
-        }
+        h1 { margin-bottom: 15px; }
+        h2 { margin-top: 30px; }
 
-        /* Main Landscape/Profile Image Styling */
         .profile-pic {
-            max-width: 100%; /* Keeps it from overflowing the box */
-            height: auto;    /* Maintains aspect ratio */
+            max-width: 100%;
+            height: auto;
             border-radius: 12px;
             margin: 25px 0;
-            display: inline-block;
         }
 
-        /* Video Game Thumbnail Styling */
         .game-image {
             max-width: 100%;
-            width: 120px;    /* Sets a consistent size for thumbnails */
+            width: 120px;
             height: auto;
             border-radius: 8px;
-            display: block;  /* Centers them on a new line */
-            margin: 8px auto 12px auto;
+            display: block;
+            margin: 10px auto; /* Centers the image thumbnails */
         }
 
         /* Link Styling */
@@ -71,10 +68,14 @@
             text-decoration: underline;
         }
 
-        /* List Styling */
         ol {
-            text-align: left; /* Makes lists easier to read */
+            text-align: left;
             display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -94,8 +95,8 @@
     
         <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
 
-        <h2>My Top 3 Videogames of All Time</h2>
-        <p>One of my favorite hobbies since I was a kid was playing videogames. The best games I ever played were:</p>     
+        <h2>My Top 3 Videogames</h2>
+        <p>One of my favorite hobbies is playing videogames. The best games I ever played were:</p>     
         
         <ol>
             <li>Uncharted <img src="Uncharted.png" alt="Uncharted" class="game-image"></li>
@@ -103,7 +104,14 @@
             <li>GTA <img src="GTA.jpeg" alt="GTA" class="game-image"></li>
         </ol>
 
-        <p>Thank you for reading about me! More information about the games will be below!</p>        
+        <p><strong>Want to learn more?</strong></p>        
         
         <ol> 
             <li><a href="https://www.playstation.com/en-us/uncharted/" target="_blank">Immerse yourself in the life of Nathan Drake</a></li>
+            <li><a href="https://www.playstation.com/en-us/games/call-of-duty-modern-warfare-iii/" target="_blank">This is your Call to Duty</a></li>
+            <li><a href="https://www.rockstargames.com/gta-v" target="_blank">Cause chaos and take over Los Santos</a></li>
+        </ol>     
+    </div>
+
+</body>
+</html>
