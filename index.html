@@ -20,6 +20,7 @@
         }
 
         body {
+            /* Deep Sony Blue/Black Gradient */
             background: linear-gradient(-45deg, #050505, #001f3f, #001122, #050505);
             background-size: 400% 400%;
             animation: waveFlow 15s ease-in-out infinite;
@@ -36,7 +37,7 @@
             position: relative;
         }
 
-        /* --- 2. FLOATING ICONS --- */
+        /* --- 2. FLOATING ICONS (The Particles) --- */
         .particles {
             position: fixed;
             top: 0;
@@ -54,6 +55,7 @@
             animation: float 25s infinite linear;
         }
 
+        /* PlayStation Shapes */
         .circle { border-radius: 50%; width: 12px; height: 12px; }
         .square { width: 12px; height: 12px; }
         .triangle { 
@@ -72,11 +74,13 @@
             padding: 50px 40px;             
             border-radius: 40px; 
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.7); 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8); 
             max-width: 550px;
             width: 100%;
             text-align: center;
-            z-index: 1;        
+            z-index: 1;
+            /* Subtile Glossy Shine */
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 50%);
         }
 
         /* --- 4. CINEMATIC TEXT STYLES --- */
@@ -84,11 +88,11 @@
             font-family: 'Segoe UI', Arial, sans-serif;
             font-weight: 200;
             text-transform: uppercase;
-            letter-spacing: 10px; /* Even wider for that Sony feel */
+            letter-spacing: 10px; /* Cinematic spacing */
             color: #ffffff;
-            /* Multi-layer glow for that high-definition look */
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 
-                         0 0 20px rgba(0, 210, 255, 0.3);
+            /* High-definition Glow */
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.5), 
+                         0 0 25px rgba(0, 210, 255, 0.3);
             margin-bottom: 20px;
         }
 
@@ -96,115 +100,16 @@
             font-size: 1.1rem;
             line-height: 1.8;
             letter-spacing: 1.5px;
-            color: rgba(255, 255, 255, 0.85);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
 
-        h1 { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 25px; }
+        h1 { border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 25px; }
 
-        /* --- 5. IMAGES --- */
+        /* --- 5. IMAGES (Main and Game Icons) --- */
         .profile-pic {
             max-width: 100%;
             height: auto;
             border-radius: 20px;
             margin: 30px 0;
             border: 1px solid rgba(255,255,255,0.2);
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.05);
-            border-color: rgba(0, 210, 255, 0.5);
-        }
-
-        .game-image {
-            max-width: 100%;
-            width: 180px;
-            height: auto;
-            border-radius: 10px;
-            display: block;
-            margin: 20px auto; 
-            border: 2px solid transparent;
-            transition: all 0.4s ease;
-        }
-
-        li:hover {
-            transform: translateX(10px);
-            color: #00d2ff;
-            text-shadow: 0 0 10px rgba(0, 210, 255, 0.8);
-        }
-
-        li:hover .game-image {
-            transform: scale(1.1);
-            border-color: #ffffff;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-        }
-
-        /* --- 6. GLOWING LINKS --- */
-        a {
-            color: #00d2ff;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 2px;
-            transition: 0.3s;
-        }
-
-        a:hover {
-            color: #ffffff;
-            text-shadow: 0 0 15px #00d2ff;
-            text-decoration: underline;
-        }
-
-        ol {
-            text-align: left;
-            display: inline-block;
-            margin-bottom: 30px;
-            list-style-position: outside;
-        }
-
-        li {
-            margin-bottom: 40px;
-            font-size: 1.2rem;
-            transition: 0.3s ease;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="particles">
-        <div class="particle circle" style="left: 5%; animation-delay: 0s;"></div>
-        <div class="particle square" style="left: 20%; animation-delay: 7s;"></div>
-        <div class="particle triangle" style="left: 35%; animation-delay: 3s;"></div>
-        <div class="particle circle" style="left: 55%; animation-delay: 10s;"></div>
-        <div class="particle square" style="left: 75%; animation-delay: 5s;"></div>
-        <div class="particle triangle" style="left: 90%; animation-delay: 15s;"></div>
-    </div>
-
-    <div class="container">
-        <h1>Hello, World!</h1>
-        
-        <p>I’m learning how to style my website using CSS. It's starting to look pretty good!</p>
-        
-        <img src="src/ps3.png" alt="My PlayStation 3" class="profile-pic">
-
-        <p>Check out my favorite website: <br> 
-            <a href="https://store.playstation.com/" target="_blank">Access PlayStation Store</a>
-        </p>
-    
-        <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 40px 0;">
-
-        <h2>Top 3 Games</h2>
-        <p>One of my favorite hobbies since I was a kid was playing videogames. The best games I ever played were:</p>     
-        
-        <ol>
-            <li>Uncharted <img src="src/Uncharted.png" alt="Uncharted" class="game-image"></li>
-            <li>Call of Duty <img src="src/COD.png" alt="Call of Duty" class="game-image"></li>
-            <li>GTA <img src="src/GTA.jpeg" alt="GTA" class="game-image"></li>
-        </ol>
-
-        <p>Thank you for reading about me! More information about the games will be below!</p>        
-        
-        <ol> 
-            <li><a href="https://www.playstation.
