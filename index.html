@@ -5,7 +5,7 @@
     <title>PS3 System Interface</title>
     
     <style> 
-        /* 1. THE PS3 WAVE BACKGROUND */
+        /* --- THE PS3 WAVE BACKGROUND --- */
         @keyframes waveFlow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -19,7 +19,6 @@
             animation: waveFlow 15s ease-in-out infinite;
             
             color: #ffffff;
-            /* Using Times New Roman as requested */
             font-family: "Times New Roman", Times, serif; 
             margin: 0;
             display: flex;
@@ -30,7 +29,7 @@
             box-sizing: border-box;
         }
 
-        /* 2. THE GLASS CONTAINER */
+        /* --- THE GLASS CONTAINER --- */
         .container {
             background: rgba(255, 255, 255, 0.08); 
             backdrop-filter: blur(12px);
@@ -44,7 +43,7 @@
             text-align: center;        
         }
 
-        /* 3. SONY-STYLE HEADERS */
+        /* --- SONY-STYLE HEADERS --- */
         h1, h2 {
             font-family: 'Segoe UI', sans-serif;
             font-weight: 200;
@@ -63,14 +62,15 @@
             margin: 25px 0;
             border: 1px solid rgba(255,255,255,0.2);
             transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .profile-pic:hover {
             transform: scale(1.02);
-            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+            box-shadow: 0 0 25px rgba(255,255,255,0.25);
         }
 
-        /* 4. DYNAMIC GAME THUMBNAILS */
+        /* --- DYNAMIC GAME THUMBNAILS --- */
         .game-image {
             max-width: 100%;
             width: 180px;
@@ -82,7 +82,6 @@
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* Hover effect: Item slides and image glows */
         li:hover {
             transform: translateX(10px);
             color: #00d2ff;
@@ -94,7 +93,7 @@
             box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
         }
 
-        /* 5. GLOWING LINKS */
+        /* --- GLOWING LINKS --- */
         a {
             color: #00d2ff;
             text-decoration: none;
@@ -128,7 +127,7 @@
         
         <p>Welcome back. The CSS interface has been successfully updated to the PS3 XMB aesthetic.</p>
         
-        <img src="my-image.jpg" alt="A beautiful landscape photo" class="profile-pic">
+        http://googleusercontent.com/image_collection/image_retrieval/9223970921494168704_0
 
         <p>Network Tools: <br> 
             <a href="https://www.google.com" target="_blank">Access PlayStation Network</a>
