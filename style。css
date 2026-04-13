@@ -1,0 +1,108 @@
+/* --- PS3 Background Animation --- */
+@keyframes waveFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    /* The "Sony Blue" to Deep Carbon gradient */
+    background: linear-gradient(-45deg, #000000, #162221, #003a6b, #000000);
+    background-size: 400% 400%;
+    animation: waveFlow 15s ease infinite;
+    
+    color: #ffffff;
+    font-family: "Times New Roman", Times, serif; /* Your requested font */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 60px 20px;
+}
+
+/* --- The PS3 "Glass" Container --- */
+.container {
+    background: rgba(255, 255, 255, 0.1); /* Translucent white */
+    backdrop-filter: blur(10px); /* Frosty glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    padding: 50px;
+    max-width: 650px;
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* --- Typography --- */
+h1, h2 {
+    /* Using a sleek font for headers to match the PS3 UI */
+    font-family: 'Segoe UI', sans-serif; 
+    font-weight: 200; /* Thin, elegant look */
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+h1 { font-size: 2.2rem; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 10px; }
+h2 { font-size: 1.5rem; margin-top: 50px; }
+
+p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+/* --- PS3 "Glow" Links --- */
+a {
+    color: #00d2ff;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff;
+}
+
+/* --- Images with "Active Selection" Glow --- */
+.profile-pic {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.3);
+    margin: 30px 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.game-image {
+    max-width: 100%;
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* The "Selection" effect when hovering over a game icon */
+.game-image:hover {
+    transform: scale(1.15);
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 25px rgba(255,255,255,0.8);
+}
+
+/* --- List Styling --- */
+ol {
+    list-style-position: inside;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    margin-bottom: 30px;
+    color: #ffffff;
+}
