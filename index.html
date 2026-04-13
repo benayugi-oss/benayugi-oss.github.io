@@ -1,10 +1,11 @@
-<!DOCTYPE html> <!--This tells the browser that the document is HTML file -->
-<html lang="en"> <!--Shows that the language is english and starts the code-->
-<head>  <!--Start of head section-->
-    <meta charset="UTF-8"> 
-    <title>My Professional Styled Website</title> <!--writes the title of the page-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Professional Styled Website</title>
     
     <style> 
+        /* General Page Layout */
         body {
             background-color: #f0f4f8; 
             color: #333333;           
@@ -15,14 +16,15 @@
             justify-content: center;   
             align-items: center;       
             min-height: 100vh;         
-            padding: 20px; /* Added padding for mobile phone screens */
+            padding: 20px; 
         }
 
+        /* The main white box container */
         .container {
             background-color: white;   
             padding: 40px;             
-            border-radius: 20px; /* Slightly rounder for a friendlier look */
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Softer, more modern shadow */
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
             max-width: 500px;          
             text-align: center;        
         }
@@ -32,68 +34,76 @@
             margin-bottom: 15px;      
         }
 
-        /* I moved your image styling here! */
+        h2 {
+            color: #2d5a27;
+            margin-top: 30px;
+        }
+
+        /* Main Landscape/Profile Image Styling */
         .profile-pic {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
+            max-width: 100%; /* Keeps it from overflowing the box */
+            height: auto;    /* Maintains aspect ratio */
             border-radius: 12px;
             margin: 25px 0;
             display: inline-block;
-            .game-image {
-    width: 120px;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-    margin-top: 8px;
-    margin-bottom: 12px;
-}
         }
 
-        /* Styling the Link */
+        /* Video Game Thumbnail Styling */
+        .game-image {
+            max-width: 100%;
+            width: 120px;    /* Sets a consistent size for thumbnails */
+            height: auto;
+            border-radius: 8px;
+            display: block;  /* Centers them on a new line */
+            margin: 8px auto 12px auto;
+        }
+
+        /* Link Styling */
         a {
-            color: #2d5a27; /* Matches your heading */
-            text-decoration: none; /* Removes the underline */
+            color: #2d5a27;
+            text-decoration: none;
             font-weight: bold;
-            transition: 0.3s; /* Makes the color change smooth */
+            transition: 0.3s;
         }
 
         a:hover {
-            color: #4a8c41; /* Lightens the green when you hover over it */
-            text-decoration: underline; /* Underline only appears when hovering */
+            color: #4a8c41;
+            text-decoration: underline;
+        }
+
+        /* List Styling */
+        ol {
+            text-align: left; /* Makes lists easier to read */
+            display: inline-block;
         }
     </style>
-</head> <!--closes the head-->
-<body> <!--begins the main part of the website-->
+</head>
 
-    <div class="container"> <!--puts a box that holds the body contents-->
-        <h1>Hello, World!</h1>  <!--title in the body-->
-        
-        <p>I’m learning how to style my website using CSS. It's starting to look pretty good!</p> <!--this is a paragraph-->
-        
-        <img src="my-image.jpg" alt="A beautiful landscape photo" class="profile-pic"> <!--this is an image-->
+<body>
 
-        <p>Check out my favorite website: <br> <!--this is a paragraph--> 
-            <a href="https://www.google.com" target="_blank">Click here to visit!</a> <!--this is a link-->
+    <div class="container">
+        <h1>Hello, World!</h1>
+        
+        <p>I’m learning how to style my website using CSS. It's starting to look pretty good!</p>
+        
+        <img src="my-image.jpg" alt="A beautiful landscape photo" class="profile-pic">
+
+        <p>Check out my favorite website: <br> 
+            <a href="https://www.google.com" target="_blank">Click here to visit!</a>
         </p>
     
-    <h2> My Top 3 videogames of All time </h2>
-    <p>One of my favourite hobbies since I was a kid was playing videogames. Its easy to say that the best games I ever played were:</p>    
-    <ol>
-  <li>Uncharted <img src="Uncharted.png" alt="Uncharted"></li>
-  <li>Call of Duty <img src="COD.png" alt="Call of Duty"></li> <!--this is an ordered list-->
-  <li>GTA <img src="GTA.jpeg" alt="GTA"></li>
-</ol>
-   <p> Thank you for reading about me! More information about the games will be below!</p>    
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+        <h2>My Top 3 Videogames of All Time</h2>
+        <p>One of my favorite hobbies since I was a kid was playing videogames. The best games I ever played were:</p>     
+        
+        <ol>
+            <li>Uncharted <img src="Uncharted.png" alt="Uncharted" class="game-image"></li>
+            <li>Call of Duty <img src="COD.png" alt="Call of Duty" class="game-image"></li>
+            <li>GTA <img src="GTA.jpeg" alt="GTA" class="game-image"></li>
+        </ol>
+
+        <p>Thank you for reading about me! More information about the games will be below!</p>        
+        
         <ol> 
-   <li><a href="https://www.playstation.com/en-us/uncharted/" target="_blank">Immerse yourself in the life of Nathan Drake</a> <!--this is a link--></li>
-    <li><a href="https://www.playstation.com/en-us/games/call-of-duty-modern-warfare-iii/" target="_blank"></a>
-    This is your Call to Duty</li>
-</a> <!--this is a link-->
-    <li><a href="https://www.rockstargames.com/gta-v" target="_blank">
-    Cause chaos and take over Los Santos</li>
-</a> <!--this is a link-->
-        </ol>    
-</div> <!--closes the box-->
-</body> <!--closes the body-->
-</html> <!--ends the code-->
+            <li><a href="https://www.playstation.com/en-us/uncharted/" target="_blank">Immerse yourself in the life of Nathan Drake</a></li>
