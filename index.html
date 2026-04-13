@@ -5,19 +5,23 @@
     <title>My Professional Styled Website</title>
     
     <style> 
-        /* --- THE PS3 WAVE BACKGROUND --- */
+        /* --- 1. THE PS3 WAVE & FLOATING PARTICLES --- */
         @keyframes waveFlow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
         body {
-            /* Deep Sony Carbon & Blue Gradient */
             background: linear-gradient(-45deg, #050505, #001f3f, #001122, #050505);
             background-size: 400% 400%;
             animation: waveFlow 15s ease-in-out infinite;
-            
             color: #ffffff;
             font-family: "Times New Roman", Times, serif; 
             margin: 0;
@@ -27,9 +31,43 @@
             min-height: 100vh;
             padding: 60px 20px;
             box-sizing: border-box;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* --- THE GLASS CONTAINER --- */
+        /* --- 2. FLOATING ICONS (The Particles) --- */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Behind everything */
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            bottom: -100px;
+            background: rgba(255, 255, 255, 0.2);
+            width: 20px;
+            height: 20px;
+            animation: float 20s infinite linear;
+        }
+
+        /* Different shapes for icons */
+        .circle { border-radius: 50%; width: 15px; height: 15px; }
+        .square { width: 15px; height: 15px; }
+        .triangle { 
+            width: 0; height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 18px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+        }
+
+        /* --- 3. THE GLASS CONTAINER --- */
         .container {
             background: rgba(255, 255, 255, 0.08); 
             backdrop-filter: blur(12px);
@@ -40,10 +78,11 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.6); 
             max-width: 550px;
             width: 100%;
-            text-align: center;        
+            text-align: center;
+            position: relative;
+            z-index: 1;        
         }
 
-        /* --- SONY-STYLE HEADERS --- */
         h1, h2 {
             font-family: 'Segoe UI', sans-serif;
             font-weight: 200;
@@ -70,7 +109,6 @@
             box-shadow: 0 0 25px rgba(255,255,255,0.25);
         }
 
-        /* --- DYNAMIC GAME THUMBNAILS --- */
         .game-image {
             max-width: 100%;
             width: 180px;
@@ -93,7 +131,6 @@
             box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
         }
 
-        /* --- GLOWING LINKS --- */
         a {
             color: #00d2ff;
             text-decoration: none;
@@ -122,14 +159,21 @@
 
 <body>
 
+    <div class="particles">
+        <div class="particle circle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle square" style="left: 25%; animation-delay: 5s;"></div>
+        <div class="particle triangle" style="left: 45%; animation-delay: 2s;"></div>
+        <div class="particle square" style="left: 65%; animation-delay: 8s;"></div>
+        <div class="particle circle" style="left: 85%; animation-delay: 3s;"></div>
+        <div class="particle triangle" style="left: 90%; animation-delay: 12s;"></div>
+    </div>
+
     <div class="container">
         <h1>Hello, World!</h1>
         
         <p>I’m learning how to style my website using CSS. It's starting to look pretty good!</p>
         
-        <img src="https://images.unsplash.com/photo-1621259182978-f09e5e2ca090?q=80&w=1000&auto=format&fit=crop" 
-             alt="Classic PlayStation 3 Console" 
-             class="profile-pic">
+        <img src="ps3.png" alt="My PlayStation 3" class="profile-pic">
 
         <p>Check out my favorite website: <br> 
             <a href="https://store.playstation.com/" target="_blank">Access PlayStation Store</a>
