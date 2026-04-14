@@ -5,7 +5,7 @@
     <title>My Professional Styled Website</title>
     
     <style> 
-        /* --- 1. THE PS3 WAVE & FLOATING ICONS --- */
+        /* --- 1. ANIMATIONS --- */
         @keyframes waveFlow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -19,6 +19,12 @@
             100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
 
+        @keyframes powerGlow {
+            0%, 100% { box-shadow: 0 0 5px #00d2ff; }
+            50% { box-shadow: 0 0 20px #00d2ff; }
+        }
+
+        /* --- 2. BASE STYLES --- */
         body {
             background: linear-gradient(-45deg, #050505, #001f3f, #001122, #050505);
             background-size: 400% 400%;
@@ -36,35 +42,27 @@
             position: relative;
         }
 
-        /* --- 2. ICON STYLES --- */
+        /* --- 3. FLOATING ICONS --- */
         .particles {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none;
         }
-
         .particle {
-            position: absolute;
-            bottom: -100px;
+            position: absolute; bottom: -100px;
             background: rgba(255, 255, 255, 0.4); 
             animation: float 20s infinite linear;
         }
-
         .circle { border-radius: 50%; width: 15px; height: 15px; }
         .square { width: 15px; height: 15px; }
         .triangle { 
-            width: 0; height: 0; 
-            border-left: 10px solid transparent;
+            width: 0; height: 0; border-left: 10px solid transparent;
             border-right: 10px solid transparent;
             border-bottom: 18px solid rgba(255, 255, 255, 0.4);
             background: transparent;
         }
 
-        /* --- 3. THE GLASS CONTAINER --- */
+        /* --- 4. THE GLASS CONTAINER --- */
         .container {
             background: rgba(255, 255, 255, 0.05); 
             backdrop-filter: blur(15px);
@@ -73,73 +71,72 @@
             border-radius: 40px; 
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 30px 60px rgba(0,0,0,0.8); 
-            max-width: 550px;
-            width: 100%;
-            text-align: center;
-            z-index: 1;        
+            max-width: 550px; width: 100%;
+            text-align: center; z-index: 1;        
         }
 
-        /* --- 4. CINEMATIC TEXT --- */
-        h1, h2 {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            font-weight: 200;
-            text-transform: uppercase;
-            letter-spacing: 10px; 
-            color: #ffffff;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 
-                         0 0 30px rgba(0, 210, 255, 0.4);
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            letter-spacing: 1.5px;
-            color: rgba(255, 255, 255, 0.95);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
-        }
-
-        h1 { border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 25px; }
-
-        /* --- 5. IMAGES --- */
-        .profile-pic {
-            max-width: 100%;
-            height: auto;
-            border-radius: 20px;
-            margin: 30px 0;
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: 0.5s;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-        }
-
-        .profile-pic:hover { transform: scale(1.04); }
-
-        .game-image {
-            max-width: 100%;
-            width: 180px;
-            height: auto;
-            border-radius: 10px;
-            display: block;
-            margin: 20px auto; 
-            border: 2px solid transparent;
+        /* --- 5. THE REPLACEMENT: VIRTUAL CONSOLE PLATE --- */
+        .console-plate {
+            width: 280px;
+            height: 100px;
+            background: linear-gradient(145deg, #1a1a1a, #000000);
+            margin: 40px auto;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,1);
+            position: relative;
             transition: 0.4s;
         }
 
-        li:hover { transform: translateX(12px); color: #00d2ff; }
-        li:hover .game-image { transform: scale(1.1); border-color: #ffffff; }
-
-        a {
-            color: #00d2ff;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 2px;
-            transition: 0.3s;
+        .console-plate:hover {
+            transform: translateY(-5px);
+            border-color: #00d2ff;
         }
 
-        a:hover { color: #ffffff; text-shadow: 0 0 15px #00d2ff; }
+        .console-plate h3 {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 200;
+            letter-spacing: 5px;
+            margin: 0;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
 
+        .power-light {
+            width: 8px;
+            height: 8px;
+            background: #00d2ff;
+            border-radius: 50%;
+            margin-top: 10px;
+            animation: powerGlow 2s infinite ease-in-out;
+        }
+
+        /* --- 6. TEXT & LINKS --- */
+        h1, h2 {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 200;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            text-shadow: 0 0 15px rgba(255,255,255,0.7), 0 0 30px rgba(0,210,255,0.4);
+        }
+
+        p { font-size: 1.15rem; line-height: 1.8; letter-spacing: 1.5px; text-shadow: 2px 2px 4px #000; }
+        
+        a { color: #00d2ff; text-decoration: none; font-weight: bold; letter-spacing: 2px; transition: 0.3s; }
+        a:hover { color: #fff; text-shadow: 0 0 15px #00d2ff; text-decoration: underline; }
+
+        .game-image {
+            width: 180px; border-radius: 10px; display: block; margin: 20px auto; 
+            border: 2px solid transparent; transition: 0.4s;
+        }
+        li:hover .game-image { transform: scale(1.1); border-color: #fff; }
         ol { text-align: left; display: inline-block; margin-bottom: 30px; }
         li { margin-bottom: 40px; font-size: 1.2rem; }
+
     </style>
 </head>
 
@@ -159,7 +156,10 @@
         
         <p>I’m learning how to style my website using CSS. It's starting to look pretty good!</p>
         
-        <img src="ps3.png" alt="My PlayStation 3" class="profile-pic">
+        <div class="console-plate">
+            <h3>PLAYSTATION 3</h3>
+            <div class="power-light"></div>
+        </div>
 
         <p>Check out my favorite website: <br> 
             <a href="https://store.playstation.com/" target="_blank">Access PlayStation Store</a>
