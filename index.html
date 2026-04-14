@@ -14,14 +14,14 @@
 
         @keyframes float {
             0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            20% { opacity: 0.7; } 
-            80% { opacity: 0.7; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+            10% { opacity: 0.8; } 
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-110vh) rotate(720deg); opacity: 0; }
         }
 
-        @keyframes powerGlow {
-            0%, 100% { box-shadow: 0 0 5px #00d2ff; }
-            50% { box-shadow: 0 0 20px #00d2ff; }
+        @keyframes logoGlow {
+            0%, 100% { filter: drop-shadow(0 0 2px rgba(255,255,255,0.5)); }
+            50% { filter: drop-shadow(0 0 10px rgba(0,210,255,0.8)); }
         }
 
         /* --- 2. BASE STYLES --- */
@@ -34,7 +34,7 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center; /* Perfectly centered vertically */
             min-height: 100vh;
             padding: 60px 20px;
             box-sizing: border-box;
@@ -42,7 +42,7 @@
             position: relative;
         }
 
-        /* --- 3. FLOATING ICONS --- */
+        /* --- 3. MORE FREQUENT "GAMEY" ICONS --- */
         .particles {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -50,69 +50,90 @@
         }
         .particle {
             position: absolute; bottom: -100px;
-            background: rgba(255, 255, 255, 0.4); 
-            animation: float 20s infinite linear;
+            background: rgba(255, 255, 255, 0.5); 
+            animation: float 12s infinite linear; /* Faster speed */
         }
-        .circle { border-radius: 50%; width: 15px; height: 15px; }
-        .square { width: 15px; height: 15px; }
+        .p1 { width: 10px; height: 10px; }
+        .p2 { width: 20px; height: 20px; opacity: 0.3; } /* Random sizes */
+        
+        .circle { border-radius: 50%; }
+        .square { }
         .triangle { 
             width: 0; height: 0; border-left: 10px solid transparent;
             border-right: 10px solid transparent;
-            border-bottom: 18px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 18px solid rgba(255, 255, 255, 0.5);
             background: transparent;
         }
 
         /* --- 4. THE GLASS CONTAINER --- */
         .container {
             background: rgba(255, 255, 255, 0.05); 
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             padding: 50px 40px;             
             border-radius: 40px; 
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 30px 60px rgba(0,0,0,0.8); 
             max-width: 550px; width: 100%;
             text-align: center; z-index: 1;        
         }
 
-        /* --- 5. THE REPLACEMENT: VIRTUAL CONSOLE PLATE --- */
+        /* --- 5. THE PLATE WITH CSS LOGO --- */
         .console-plate {
             width: 280px;
-            height: 100px;
-            background: linear-gradient(145deg, #1a1a1a, #000000);
+            height: 120px;
+            background: linear-gradient(145deg, #111, #000);
             margin: 40px auto;
-            border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,1);
-            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,1);
             transition: 0.4s;
         }
 
         .console-plate:hover {
-            transform: translateY(-5px);
+            transform: scale(1.05);
             border-color: #00d2ff;
+        }
+
+        /* Pure CSS PS Logo Concept */
+        .ps-logo {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            margin-bottom: 10px;
+            animation: logoGlow 3s infinite ease-in-out;
+        }
+        
+        /* The "P" and "S" vibe using CSS shapes */
+        .ps-logo::before {
+            content: '';
+            position: absolute;
+            width: 25px; height: 35px;
+            border: 4px solid #fff;
+            border-radius: 50% 50% 50% 0;
+            left: 0;
+        }
+        .ps-logo::after {
+            content: '';
+            position: absolute;
+            width: 30px; height: 15px;
+            border-bottom: 4px solid #fff;
+            border-left: 4px solid #fff;
+            bottom: -2px; left: 5px;
+            transform: skewX(-20deg);
         }
 
         .console-plate h3 {
             font-family: 'Segoe UI', sans-serif;
             font-weight: 200;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             margin: 0;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255,255,255,0.5);
-        }
-
-        .power-light {
-            width: 8px;
-            height: 8px;
-            background: #00d2ff;
-            border-radius: 50%;
-            margin-top: 10px;
-            animation: powerGlow 2s infinite ease-in-out;
+            font-size: 0.9rem;
+            color: #aaa;
         }
 
         /* --- 6. TEXT & LINKS --- */
@@ -127,7 +148,7 @@
         p { font-size: 1.15rem; line-height: 1.8; letter-spacing: 1.5px; text-shadow: 2px 2px 4px #000; }
         
         a { color: #00d2ff; text-decoration: none; font-weight: bold; letter-spacing: 2px; transition: 0.3s; }
-        a:hover { color: #fff; text-shadow: 0 0 15px #00d2ff; text-decoration: underline; }
+        a:hover { color: #fff; text-shadow: 0 0 15px #00d2ff; }
 
         .game-image {
             width: 180px; border-radius: 10px; display: block; margin: 20px auto; 
@@ -143,47 +164,13 @@
 <body>
 
     <div class="particles">
-        <div class="particle circle" style="left: 10%; animation-delay: 0s;"></div>
-        <div class="particle square" style="left: 25%; animation-delay: 5s;"></div>
-        <div class="particle triangle" style="left: 45%; animation-delay: 2s;"></div>
-        <div class="particle circle" style="left: 65%; animation-delay: 10s;"></div>
-        <div class="particle square" style="left: 80%; animation-delay: 4s;"></div>
-        <div class="particle triangle" style="left: 90%; animation-delay: 12s;"></div>
-    </div>
-
-    <div class="container">
-        <h1>Hello, World!</h1>
-        
-        <p>I’m learning how to style my website using CSS. It's starting to look pretty good!</p>
-        
-        <div class="console-plate">
-            <h3>PLAYSTATION 3</h3>
-            <div class="power-light"></div>
-        </div>
-
-        <p>Check out my favorite website: <br> 
-            <a href="https://store.playstation.com/" target="_blank">Access PlayStation Store</a>
-        </p>
-    
-        <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.15); margin: 40px 0;">
-
-        <h2>Top 3 Games</h2>
-        <p>One of my favorite hobbies since I was a kid was playing videogames. The best games I ever played were:</p>     
-        
-        <ol>
-            <li>Uncharted <img src="Uncharted.png" alt="Uncharted" class="game-image"></li>
-            <li>Call of Duty <img src="COD.png" alt="Call of Duty" class="game-image"></li>
-            <li>GTA <img src="GTA.jpeg" alt="GTA" class="game-image"></li>
-        </ol>
-
-        <p>Thank you for reading about me! More information about the games will be below!</p>        
-        
-        <ol> 
-            <li><a href="https://www.playstation.com/en-us/uncharted/" target="_blank">Nathan Drake's Journey</a></li>
-            <li><a href="https://www.playstation.com/en-us/games/call-of-duty-modern-warfare-iii/" target="_blank">The Call to Duty</a></li>
-            <li><a href="https://www.rockstargames.com/gta-v" target="_blank">Los Santos Chaos</a></li>
-        </ol>     
-    </div>
-
-</body>
-</html>
+        <div class="particle circle p1" style="left: 5%; animation-delay: 0s;"></div>
+        <div class="particle square p2" style="left: 15%; animation-delay: 2s;"></div>
+        <div class="particle triangle p1" style="left: 25%; animation-delay: 4s;"></div>
+        <div class="particle circle p2" style="left: 35%; animation-delay: 6s;"></div>
+        <div class="particle square p1" style="left: 50%; animation-delay: 1s;"></div>
+        <div class="particle triangle p2" style="left: 65%; animation-delay: 3s;"></div>
+        <div class="particle circle p1" style="left: 80%; animation-delay: 5s;"></div>
+        <div class="particle square p2" style="left: 95%; animation-delay: 7s;"></div>
+        <div class="particle triangle p1" style="left: 10%; animation-delay: 8s;"></div>
+        <div class="particle circle p2" style="left: 40%; animation-delay: 10s;"></div>
