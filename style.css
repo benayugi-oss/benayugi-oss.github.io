@@ -1,1 +1,161 @@
+/* --- 1. ANIMATIONS --- */
+@keyframes waveFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; } 
+    90% { opacity: 0.8; }
+    100% { transform: translateY(-110vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes logoGlow {
+    0%, 100% { filter: drop-shadow(0 0 2px rgba(255,255,255,0.5)); }
+    50% { filter: drop-shadow(0 0 10px rgba(0,210,255,0.8)); }
+}
+
+/* --- 2. BASE STYLES --- */
+body {
+    background: linear-gradient(-45deg, #050505, #001f3f, #001122, #050505);
+    background-size: 400% 400%;
+    animation: waveFlow 15s ease-in-out infinite;
+    color: #ffffff;
+    font-family: "Times New Roman", Times, serif; 
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- 3. FLOATING ICONS --- */
+.particles {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; pointer-events: none;
+}
+
+.particle {
+    position: absolute; bottom: -100px;
+    background: rgba(255, 255, 255, 0.5); 
+    animation: float 12s infinite linear;
+}
+
+.p1 { width: 10px; height: 10px; }
+.p2 { width: 20px; height: 20px; opacity: 0.3; } 
+
+.circle { border-radius: 50%; }
+.square { }
+.triangle { 
+    width: 0; height: 0; border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 18px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+}
+
+/* --- 4. THE GLASS CONTAINER --- */
+.container {
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 50px 40px;             
+    border-radius: 40px; 
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8); 
+    max-width: 550px; width: 100%;
+    text-align: center; z-index: 1;        
+}
+
+/* --- 5. THE PLATE WITH CSS LOGO --- */
+.console-plate {
+    width: 280px;
+    height: 120px;
+    background: linear-gradient(145deg, #111, #000);
+    margin: 40px auto;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,1);
+    transition: 0.4s;
+}
+
+.console-plate:hover {
+    transform: scale(1.05);
+    border-color: #00d2ff;
+}
+
+.ps-logo {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-bottom: 10px;
+    animation: logoGlow 3s infinite ease-in-out;
+}
+
+.ps-logo::before {
+    content: '';
+    position: absolute;
+    width: 25px; height: 35px;
+    border: 4px solid #fff;
+    border-radius: 50% 50% 50% 0;
+    left: 0;
+}
+
+.ps-logo::after {
+    content: '';
+    position: absolute;
+    width: 30px; height: 15px;
+    border-bottom: 4px solid #fff;
+    border-left: 4px solid #fff;
+    bottom: -2px; left: 5px;
+    transform: skewX(-20deg);
+}
+
+.console-plate h3 {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 200;
+    letter-spacing: 6px;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* --- 6. TEXT & LINKS --- */
+h1, h2 {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-shadow: 0 0 15px rgba(255,255,255,0.7), 0 0 30px rgba(0,210,255,0.4);
+}
+
+p { font-size: 1.15rem; line-height: 1.8; letter-spacing: 1.5px; text-shadow: 2px 2px 4px #000; }
+
+a { color: #00d2ff; text-decoration: none; font-weight: bold; letter-spacing: 2px; transition: 0.3s; }
+a:hover { color: #fff; text-shadow: 0 0 15px #00d2ff; }
+
+.divider {
+    border: 0; 
+    border-bottom: 1px solid rgba(255,255,255,0.15); 
+    margin: 40px 0;
+}
+
+.game-image {
+    width: 180px; border-radius: 10px; display: block; margin: 20px auto; 
+    border: 2px solid transparent; transition: 0.4s;
+}
+
+li:hover .game-image { transform: scale(1.1); border-color: #fff; }
+
+ol { text-align: left; display: inline-block; margin-bottom: 30px; }
+li { margin-bottom: 40px; font-size: 1.2rem; }
