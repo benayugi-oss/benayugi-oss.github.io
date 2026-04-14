@@ -2,58 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Professional Styled Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Floating background particles -->
     <div class="particles">
-        <div class="particle circle p1" style="left: 5%; animation-delay: 0s;"></div>
-        <div class="particle square p2" style="left: 15%; animation-delay: 2s;"></div>
-        <div class="particle triangle p1" style="left: 25%; animation-delay: 4s;"></div>
-        <div class="particle circle p2" style="left: 35%; animation-delay: 6s;"></div>
-        <div class="particle square p1" style="left: 50%; animation-delay: 1s;"></div>
-        <div class="particle triangle p2" style="left: 65%; animation-delay: 3s;"></div>
-        <div class="particle circle p1" style="left: 80%; animation-delay: 5s;"></div>
-        <div class="particle square p2" style="left: 95%; animation-delay: 7s;"></div>
-        <div class="particle triangle p1" style="left: 10%; animation-delay: 8s;"></div>
-        <div class="particle circle p2" style="left: 40%; animation-delay: 10s;"></div>
-        <div class="particle square p1" style="left: 70%; animation-delay: 12s;"></div>
+        <div class="particle circle" style="left: 5%; animation-delay: 0s;"></div>
+        <div class="particle square" style="left: 15%; animation-delay: 2s;"></div>
+        <div class="particle triangle" style="left: 25%; animation-delay: 4s;"></div>
+        <div class="particle circle" style="left: 35%; animation-delay: 6s;"></div>
+        <div class="particle square" style="left: 50%; animation-delay: 1s;"></div>
+        <div class="particle triangle" style="left: 65%; animation-delay: 3s;"></div>
+        <div class="particle circle" style="left: 80%; animation-delay: 5s;"></div>
+        <div class="particle square" style="left: 95%; animation-delay: 7s;"></div>
     </div>
 
     <div class="container">
-        <h1>Hello, World!</h1>
-        
-        <p>I’m learning how to style my website using CSS. It's starting to look pretty good!</p>
-        
-        <div class="console-plate">
-            <div class="ps-logo"></div>
-            <h3>PLAYSTATION 3</h3>
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1>Hello, World!</h1>
+            <p class="intro">
+                I’m learning how to style my website using CSS, and this is my gaming-themed page.
+            </p>
+        </header>
+
+        <!-- 🔥 YOUR IMAGE ADDED HERE -->
+        <div class="hero-image">
+            <img src="ps3.png" alt="PlayStation 3 Mountain Scene">
         </div>
 
-        <p>Check out my favorite website: <br> 
-            <a href="https://store.playstation.com/" target="_blank">Access PlayStation Store</a>
-        </p>
-    
+        <!-- Console Section -->
+        <section class="console-plate">
+            <div class="ps-logo">PS3</div>
+            <h2>PlayStation 3</h2>
+            <p>The console that gave me some of my favorite gaming memories.</p>
+        </section>
+
+        <!-- Favorite Site -->
+        <section class="favorite-site">
+            <h2>Favorite Website</h2>
+            <p>Check out one of my favorite gaming sites:</p>
+            <a href="https://store.playstation.com/" target="_blank" class="button-link">
+                Access PlayStation Store
+            </a>
+        </section>
+
         <hr class="divider">
 
-        <h2>Top 3 Games</h2>
-        <p>One of my favorite hobbies since I was a kid was playing videogames. The best games I ever played were:</p>     
-        
-        <ol>
-            <li>Uncharted <img src="Uncharted.png" alt="Uncharted" class="game-image"></li>
-            <li>Call of Duty <img src="COD.png" alt="Call of Duty" class="game-image"></li>
-            <li>GTA <img src="GTA.jpeg" alt="GTA" class="game-image"></li>
-        </ol>
+        <!-- Games Section -->
+        <section class="games-section">
+            <h2>Top 3 Games</h2>
+            <p>
+                One of my favorite hobbies since I was a kid has been playing video games.
+                These are some of the best games I have ever played:
+            </p>
 
-        <p>Thank you for reading about me! More information about the games will be below!</p>        
-        
-        <ol> 
-            <li><a href="https://www.playstation.com/en-us/uncharted/" target="_blank">Nathan Drake's Journey</a></li>
-            <li><a href="https://www.playstation.com/en-us/games/call-of-duty-modern-warfare-iii/" target="_blank">The Call to Duty</a></li>
-            <li><a href="https://www.rockstargames.com/gta-v" target="_blank">Los Santos Chaos</a></li>
-        </ol>     
+            <div class="game-list">
+
+                <div class="game-card">
+                    <img src="Uncharted.png" alt="Uncharted" class="game-image">
+                    <h3>1. Uncharted</h3>
+                    <p>Action-packed adventure with amazing storytelling and exploration.</p>
+                    <a href="https://www.playstation.com/en-us/uncharted/" target="_blank">
+                        Nathan Drake's Journey
+                    </a>
+                </div>
+
+                <div class="game-card">
+                    <img src="COD.png" alt="Call of Duty" class="game-image">
+                    <h3>2. Call of Duty</h3>
+                    <p>Fast-paced shooter that delivers intense multiplayer action.</p>
+                    <a href="https://www.playstation.com/en-us/games/call-of-duty-modern-warfare-iii/" target="_blank">
+                        The Call to Duty
+                    </a>
+                </div>
+
+                <div class="game-card">
+                    <img src="GTA.jpeg" alt="GTA" class="game-image">
+                    <h3>3. GTA</h3>
+                    <p>Open-world chaos with freedom, missions, and endless fun.</p>
+                    <a href="https://www.rockstargames.com/gta-v" target="_blank">
+                        Los Santos Chaos
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Thank you for reading about me and my favorite games!</p>
+        </footer>
+
     </div>
 
 </body>
