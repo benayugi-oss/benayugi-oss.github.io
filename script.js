@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // ===== ALERT BUTTON =====
     const alertButton = document.getElementById('myAlertButton');
     if (alertButton) {
         alertButton.addEventListener('click', function() {
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ===== TEXT CHANGE BUTTON =====
     const heading = document.getElementById('status-heading');
     const changeBtn = document.getElementById('update-btn');
 
@@ -22,22 +24,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ===== USER INPUT WITH IF/ELSE =====
+    const inputBox = document.getElementById('user-input');
+    const displayBtn = document.getElementById('display-btn');
+    const outputText = document.getElementById('output-text');
+
+    if (displayBtn && inputBox && outputText) {
+        displayBtn.addEventListener('click', function() {
+
+            const userText = inputBox.value.toLowerCase();
+
+            if (userText === "ps3") {
+                outputText.textContent = "🔥 Great choice! PS3 is legendary.";
+            } 
+            else if (userText === "gta") {
+                outputText.textContent = "🚗 GTA is pure chaos and fun!";
+            } 
+            else if (userText === "cod") {
+                outputText.textContent = "🎯 COD is all about skill!";
+            } 
+            else if (userText === "") {
+                outputText.textContent = "⚠️ You didn’t type anything!";
+            } 
+            else {
+                outputText.textContent = "Hmm... I don't know that one!";
+            }
+
+            inputBox.value = "";
+        });
+    }
+
 });
-// ===== USER INPUT DISPLAY =====
-const inputBox = document.getElementById('user-input');
-const displayBtn = document.getElementById('display-btn');
-const outputText = document.getElementById('output-text');
-
-if (displayBtn && inputBox && outputText) {
-    displayBtn.addEventListener('click', function() {
-
-        // Get what user typed
-        const userText = inputBox.value;
-
-        // Display it on the page
-        outputText.textContent = "You said: " + userText;
-
-        // Optional: clear input after
-        inputBox.value = "";
-    });
-}
