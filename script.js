@@ -1,4 +1,3 @@
-// Wait until the page is fully loaded (safe practice)
 document.addEventListener('DOMContentLoaded', function() {
 
     // ===== ALERT BUTTON =====
@@ -6,24 +5,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (alertButton) {
         alertButton.addEventListener('click', function() {
-            alert('The external JavaScript file is working!');
+            alert('🎮 You just unlocked a hidden feature!');
         });
     }
 
     // ===== TEXT CHANGE BUTTON =====
-    const myHeading = document.getElementById('status-heading');
-    const myButton = document.getElementById('update-btn');
+    const heading = document.getElementById('status-heading');
+    const changeBtn = document.getElementById('update-btn');
 
-    if (myButton && myHeading) {
-        myButton.addEventListener('click', function() {
+    if (heading && changeBtn) {
+        changeBtn.addEventListener('click', function() {
 
-            // Toggle text (better than one-time change)
-            if (myHeading.textContent === "Original Text") {
-                myHeading.textContent = "Text Updated Successfully!";
-                myHeading.style.color = "blue";
+            if (heading.textContent === "Hello, World!") {
+                heading.textContent = "Welcome to My Gaming World 🎮";
+                heading.style.color = "#00ffcc";
             } else {
-                myHeading.textContent = "Original Text";
-                myHeading.style.color = "black";
+                heading.textContent = "Hello, World!";
+                heading.style.color = "";
             }
 
         });
