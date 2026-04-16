@@ -23,3 +23,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+// ===== USER INPUT DISPLAY =====
+const inputBox = document.getElementById('user-input');
+const displayBtn = document.getElementById('display-btn');
+const outputText = document.getElementById('output-text');
+
+if (displayBtn && inputBox && outputText) {
+    displayBtn.addEventListener('click', function() {
+
+        // Get what user typed
+        const userText = inputBox.value;
+
+        // Display it on the page
+        outputText.textContent = userText;
+
+        // Optional: clear input after
+        inputBox.value = "";
+    });
+}
