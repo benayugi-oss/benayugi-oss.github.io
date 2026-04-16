@@ -35,7 +35,7 @@ if (displayBtn && inputBox && outputText) {
         const userText = inputBox.value;
 
         // Display it on the page
-        outputText.textContent = userText;
+        outputText.textContent = "You said: " + userText;
 
         // Optional: clear input after
         inputBox.value = "";
