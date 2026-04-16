@@ -55,3 +55,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+    // ===== RANDOM GENERATOR =====
+    const randomBtn = document.getElementById('random-btn');
+    const randomOutput = document.getElementById('random-output');
+
+    if (randomBtn && randomOutput) {
+        randomBtn.addEventListener('click', function() {
+            const messages = [
+                "🎮 PS3 forever!",
+                "🚗 GTA is total chaos.",
+                "🎯 COD takes fast reflexes.",
+                "🗺️ Uncharted is pure adventure.",
+                "🔥 Gaming is one of my favorite hobbies."
+            ];
+
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            randomOutput.textContent = messages[randomIndex];
+        });
+    }
